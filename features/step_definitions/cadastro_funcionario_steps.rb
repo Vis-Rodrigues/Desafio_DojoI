@@ -15,13 +15,14 @@
 	Quando(/^cadastra o funcionario$/) do
 		
 		fill_in('firstName', :with => 'Vitórinha')
-		fill_in('middleName', :with => 'Oliveira')
-		fill_in('lastName', :with => find(:id, 'employeeId').value)		
+		id = find(:id, 'employeeId').value
+		fill_in('middleName', :with => id)
+		fill_in('lastName', :with => 'Oliveira')		
 
 		#Dados de login
 		check('chkLogin')
 
-		fill_in('user_name', :with => 'Vitorinha357')
+		fill_in('user_name', :with => 'Vitorinha' + id)
 		fill_in('user_password', :with => 'Abcdef@12')
 		fill_in('re_password', :with => 'Abcdef@12')	
 		click_button('btnSave')

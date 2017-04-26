@@ -19,7 +19,10 @@ Quando(/^altera o funcionario$/) do
   	click_button('btnSave')
 
   	fill_in('personal[txtEmpFirstName]', :with => 'Etelvania')
-	fill_in('personal[txtEmpMiddleName]', :with => find(:id, 'personal_txtEmployeeId').value)
+
+  	id = find(:id, 'personal_txtEmployeeId').value
+	fill_in('personal[txtEmpMiddleName]', :with => id)
+	
 	fill_in('personal[txtEmpLastName]', :with => 'Fernandes')	
 	fill_in('personal[txtLicenNo]', :with => '1234567891')
 	fill_in('personal[txtLicExpDate]', :with => '2017-04-26')
